@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+    <div class="container">
+        <!-- <div class="row justify-content-center">  -->
+        <% blogs.forEach(function(blog){ %>
+            <div class="card"  style="width: 18rem;">
+                <h1> <%= blog.title %> </h1>
+                <img src="<%= blog.imgurl %> " class="img-thumbnail" alt="Smiley face" height="420" width="420">
+                            
+                <p> <%= blog.body %> </p>
+                <a class="btn-primary btn-sm"  href="/blogs/<%= blog._id %>">Read More...</a>
+            </div>
+
+        <% }) %>
+        
+    </div>
+    
+<% include ./partials/footer %>

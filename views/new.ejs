@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+    <div class="container">
+
+        <h1 class="display-4">new blog</h1>
+        <form action="/new" method="POST">
+            <div class="form-group">
+            <label for="exampleInputTitle">Title</label>
+            <input type="text" class="form-control" name="title" aria-describedby="emailHelp" placeholder="Blog Title">
+            
+            </div>
+            <div class="form-group">
+            <label for="exampleInputImage">Image</label>
+            <input type="text" class="form-control" name="imgurl" placeholder="Image URL">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputImage">Body</label>
+                <textarea type="text" class="form-control" name="body" placeholder="Blog Body" rows="3"></textarea>
+            </div>
+           
+            
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </form>
+    </div>
+<% include ./partials/footer %>

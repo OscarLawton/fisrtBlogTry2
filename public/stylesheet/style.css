@@ -1,0 +1,19 @@
+body{
+    margin: 0 auto;
+}
+
+
+.container{
+ border: black;
+
+}
+
+.card{
+    padding: 20px;
+   
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+}
