@@ -5,15 +5,45 @@ body{
 
 .container{
  border: black;
-
+   
 }
 
 .card{
     padding: 20px;
-   
     width: auto;
     height: auto;
     margin: 0 auto;
     margin-top: 20px;
     position: relative;
+}
+
+.myEditBtn{
+    width: 12%;
+    float: left;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.myDeleteBtn{
+    float: left;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.show-container{
+    padding: 40px;
+    width: 75%;
+    padding-bottom: 40px;
+    margin: 50px auto;
+ 
+
+   
+    position: relative;
+    border-width: thin;
+    border-style: solid;
+    border-color:lightgrey;
+}
+
+.text-area{
+    padding: 20px;
 }

@@ -72,8 +72,41 @@ app.get("/blogs/:id", function(req, res){
     
 });
 
+app.get("/blogs/:id/edit", function(req, res){
+    Blog.findById(req.params.id, function(err, foundBlog){
+        if(err){
+            console.log("something went wrong to the edit route");
+            console.log(err);
+        } else {
+            console.log("success in the show route");
+            res.render("edit", {blog: foundBlog});
+        }
+    })
+});
+
+app.put("/blogs/:id", function(req, res){
+    var title = req.body.title;
+    var imgurl = req.body.imgurl;
+    var body = req.body.body;
+    var updateObject = {title: title, imgurl: imgurl, body: body};
+    Blog.findByIdAndUpdate(req.params.id, updateObject, {new: true},function(err, updatedBlog){
+        if(err){
+            console.log("something went wrong updating");
+            console.log(err);
+            res.redirect("/blogs");
+        } else {
+            console.log("this ran in the update route");
+            res.redirect("/blogs/"+ req.params.id);
+        }
+    })
+});
+
+app.put("/edit/:id", function(req, res){
+
+});
+
 app.delete("/blogs/:id", function(req ,res){
-    Blog.findByIdAndUpdate(req.params.id, function(err){
+    Blog.findByIdAndRemove(req.params.id, function(err){
         if(err){
             console.log(err);
             res.redirect("/");
