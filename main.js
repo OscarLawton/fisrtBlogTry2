@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV != 'production'){
+    require("dotenv").config();
+}
+
 var express = require("express");
 var mongoose = require("mongoose");
 var path = require('path');
@@ -5,7 +9,7 @@ var bodyParser = require("body-parser");
 var methodOveride = require("method-override");
 
 var app = express();
-mongoose.connect("mongodb://localhost/first_blog_app",{ useNewUrlParser: true });
+mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true });
 
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'));
