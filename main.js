@@ -128,6 +128,6 @@ app.delete("/blogs/:id", function(req ,res){
     });
 });
 
-app.listen(3000, function(req, res){
-    console.log("It's alive!!!!");
+app.listen(process.env.PORT || 3000, function(){
+    console.log("It's aliivee!!!!!");
 });
