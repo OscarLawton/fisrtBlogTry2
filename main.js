@@ -1,6 +1,4 @@
-if(process.env.NODE_ENV != 'production'){
-    require("dotenv").config();
-}
+
 
 var express = require("express");
 var mongoose = require("mongoose");
@@ -17,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOveride("_method"));
 
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://user:Ezxx0uyE2RlqMlEw@cluster0-rh13z.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
 
 const db = mongoose.connection;
 db.on("error", function(err){
