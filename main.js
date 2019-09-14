@@ -17,6 +17,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOveride("_method"));
 
+const db = mongoose.connection;
+db.on("error", function(err){
+    console.log(err);
+})
+db.once("open", function(){
+    console.log("connected to mongoose");
+});
 const Schema = mongoose.Schema;
 
 var blogSchema = new Schema({
