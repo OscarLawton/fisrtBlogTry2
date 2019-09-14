@@ -23,7 +23,7 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
 
 
 //var url = process.env.DATABASE_URL || "mongodb://localhost/first_blog_app";
-mongoose.connect(url, {useNewUrlParser: true});
+//mongoose.connect(url, {useNewUrlParser: true});
 const db = mongoose.connection;
 db.on("error", function(err){
     console.log(err);
