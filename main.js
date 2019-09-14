@@ -14,7 +14,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOveride("_method"));
 
 //mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
-var url = process.env.DATABASEURL || "mongodb://localhost/first_blog_app";
+var url = process.env.DATABASE_URL || "mongodb://localhost/first_blog_app";
 mongoose.connect(url, {useNewUrlParser: true});
 const db = mongoose.connection;
 db.on("error", function(err){
