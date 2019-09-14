@@ -9,14 +9,14 @@ var bodyParser = require("body-parser");
 var methodOveride = require("method-override");
 
 var app = express();
-mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true });
+
 
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOveride("_method"));
-
+mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true });
 const db = mongoose.connection;
 db.on("error", function(err){
     console.log(err);
